@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <header class="flex">
+    <header class="flex  ">
         <div>
             <NuxtLink to=""><img src="~/assets/img/image (42).png" width="200rem" height="200rem" alt=""></NuxtLink>
         </div>

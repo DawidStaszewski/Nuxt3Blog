@@ -6,7 +6,13 @@ export default {
   devtools: { enabled: true },
 
   // Style globalne
-  css: ["~/assets/scss/custom.scss"],
+  css: ["~/assets/scss/custom.css"],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 
   // Konfiguracja meta i head dla aplikacji
   app: {
@@ -20,12 +26,14 @@ export default {
     },
   },
 
-  // Opcje konfiguracji webpack (domyślnie dla Nuxt 2.x)
-  build: {
-    loaders: {
-      sass: {
-        additionalData: '@use "@/assets/scss/custom" as *;',
-      },
+  // Opcje konfiguracji dla Google Fonts
+  googleFonts: {
+    families: {
+      Roboto: [400, 700],
+      "Open+Sans": [400, 600],
     },
+    display: "swap", // Opcjonalnie możesz ustawić metodę wyświetlania czcionek
   },
+
+  modules: ["@nuxtjs/google-fonts", "@nuxtjs/tailwindcss"],
 };

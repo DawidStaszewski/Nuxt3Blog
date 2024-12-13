@@ -2,20 +2,14 @@
 
 </script>
 
-<template>
+<template class="">
 
-  <NuxtLayout>
-
+  <NuxtLayout class="">
+    <!-- <div class="text-3xl font-bold underline ">WWWWW</div> -->
     <NuxtPage />
 
   </NuxtLayout>
 
 </template>
 
-<style scoped>
-.page-container {
-  background-color: #217de6;
-  min-height: 100vh;
-
-}
-</style>
+<style scoped></style>
