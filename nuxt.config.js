@@ -1,12 +1,14 @@
-export default {
-  // Wersja Nuxt
-  compatibilityDate: "2024-04-03",
+export default defineNuxtConfig({
+  // Konfiguracja Runtime
+  runtimeConfig: {
+    public: {
+      apiBase: process.env.API_BASE_URL || "http://127.0.0.1:8000/api",
+    },
+  },
 
-  // Sekcja devtools w przypadku używania narzędzi deweloperskich
-  devtools: { enabled: true },
-
-  // Style globalne
+  // Globalne style
   css: ["~/assets/scss/custom.css"],
+
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -14,9 +16,14 @@ export default {
     },
   },
 
-  // Konfiguracja meta i head dla aplikacji
+  // Konfiguracja aplikacji
   app: {
     head: {
+      title: "Moja Aplikacja",
+      meta: [
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+      ],
       link: [
         {
           rel: "stylesheet",
@@ -26,14 +33,30 @@ export default {
     },
   },
 
-  // Opcje konfiguracji dla Google Fonts
+  // Google Fonts
   googleFonts: {
     families: {
       Roboto: [400, 700],
       "Open+Sans": [400, 600],
     },
-    display: "swap", // Opcjonalnie możesz ustawić metodę wyświetlania czcionek
+    display: "swap",
   },
 
-  modules: ["@nuxtjs/google-fonts", "@nuxtjs/tailwindcss"],
-};
+  // Moduły
+  modules: [
+    "@nuxtjs/google-fonts", // Google Fonts
+  ],
+
+  // Nitro Proxy (zamiast @nuxtjs/proxy)
+  nitro: {
+    devProxy: {
+      "/api/": {
+        target: "http://127.0.0.1:8000", // Adres backendu Laravel
+        changeOrigin: true,
+        prependPath: true,
+      },
+    },
+  },
+
+  compatibilityDate: "2025-01-04",
+});

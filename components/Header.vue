@@ -5,7 +5,7 @@
 <template>
     <header class="flex">
         <div>
-            <NuxtLink to=""><img src="~/assets/img/image (42).png" width="200rem" height="200rem" alt=""></NuxtLink>
+            <NuxtLink to=""><img src="~/assets/img/image (42).png" width="200rem" height="100rem" alt=""></NuxtLink>
         </div>
 
 
@@ -25,6 +25,7 @@
             <div>
                 <NuxtLink to="/about">About</NuxtLink>
             </div>
+            <button @click="logout">Logout</button>
         </div>
 
 
@@ -33,6 +34,15 @@
 
 </template>
 
+<script setup>
+const logout = () => {
+  // Usunięcie tokenu z localStorage
+  localStorage.removeItem('jwtToken');
+  
+  // Przekierowanie do strony logowania
+  navigateTo('/Account/login');
+};
+</script>
 
 
 <style scoped>
