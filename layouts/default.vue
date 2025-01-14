@@ -1,35 +1,14 @@
 <template>
-    <div class="min-h-screen flex flex-col bg-purple-500 px-20">
+    <div class="w-full min-h-screen flex flex-col bg-gray-500">
         <Header />
-        <div class="text-3xl font-bold underline">GDZIE JA JESTEM?=default.vue</div>
 
-        <main class="flex-1 flex  justify-center text-center">
+        <main class="flex-1 w-full max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="w-full text-3xl font-bold text-white text-center mb-6">
+                default
+            </div>
             <slot />
         </main>
-        <Footer />
     </div>
 </template>
 
-
-
-
-
-<style scoped>
-/* Możesz dodać dodatkowe style, jeśli będą potrzebne */
-</style>
-<!-- <p v-if="user">Zalogowany użytkownik: {{ user.name }} (ID: {{ user.id }})</p>
-
-<p v-else>Nie jesteś zalogowany</p>
-
-<script>
-export default {
-    computed: {
-        user() {
-            return this.$store.state.user; // Pobieramy dane użytkownika ze stanu
-        },
-    },
-    async created() {
-        await this.$store.dispatch('fetchUser'); // Ładujemy dane użytkownika po załadowaniu strony
-    },
-};
-</script> -->
+<style scoped></style>

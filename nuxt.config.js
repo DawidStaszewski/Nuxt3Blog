@@ -7,7 +7,9 @@ export default defineNuxtConfig({
   },
 
   // Globalne style
-  css: ["~/assets/scss/custom.css"],
+  css: [
+    "@/assets/css/tailwind.css", // ścieżka do pliku CSS
+  ],
 
   postcss: {
     plugins: {
@@ -17,21 +19,21 @@ export default defineNuxtConfig({
   },
 
   // Konfiguracja aplikacji
-  app: {
-    head: {
-      title: "Moja Aplikacja",
-      meta: [
-        { charset: "utf-8" },
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
-      ],
-      link: [
-        {
-          rel: "stylesheet",
-          href: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css",
-        },
-      ],
-    },
-  },
+  // app: {
+  //   head: {
+  //     title: "Moja Aplikacja",
+  //     meta: [
+  //       { charset: "utf-8" },
+  //       { name: "viewport", content: "width=device-width, initial-scale=1" },
+  //     ],
+  //     link: [
+  //       {
+  //         rel: "stylesheet",
+  //         href: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css",
+  //       },
+  //     ],
+  //   },
+  // },
 
   // Google Fonts
   googleFonts: {

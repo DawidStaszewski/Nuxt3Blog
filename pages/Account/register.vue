@@ -1,24 +1,42 @@
 <template>
-    <div class="register">
-        <h1>Register</h1>
-        <form @submit.prevent="submitForm">
+    <div class="w-full register max-w-3xl mx-auto p-6 bg-gray-50 shadow-lg rounded-lg mt-8">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Create an Account</h2>
+
+        <!-- Formularz rejestracji -->
+        <form @submit.prevent="submitForm" class="space-y-4 w-full">
             <div>
-                <label for="name">Name:</label>
-                <input v-model="form.name" type="text" id="name" required />
+                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                <input v-model="form.name" type="text" id="name" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Enter your name" />
             </div>
+
             <div>
-                <label for="email">Email:</label>
-                <input v-model="form.email" type="email" id="email" required />
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input v-model="form.email" type="email" id="email" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Enter your email" />
             </div>
+
             <div>
-                <label for="password">Password:</label>
-                <input v-model="form.password" type="password" id="password" required />
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input v-model="form.password" type="password" id="password" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Enter your password" />
             </div>
+
             <div>
-                <label for="password_confirmation">Confirm Password:</label>
-                <input v-model="form.password_confirmation" type="password" id="password_confirmation" required />
+                <label for="password_confirmation" class="block text-sm font-medium text-gray-700">Confirm
+                    Password</label>
+                <input v-model="form.password_confirmation" type="password" id="password_confirmation" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Confirm your password" />
             </div>
-            <button type="submit">Register</button>
+
+            <button type="submit"
+                class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                Register
+            </button>
         </form>
     </div>
 </template>
